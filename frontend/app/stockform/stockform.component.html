@@ -1,0 +1,45 @@
+<form class="add-stock-form" (ngSubmit)="addStock($event)">
+    <h3>Add Stock</h3>
+
+    <label for="companyName">Company:</label>
+    <input
+        type="text"
+        [(ngModel)]="companyName"
+        name="companyName"
+        id="companyName"
+        required
+    />
+    <label for="ticker">Ticker:</label>
+    <input 
+        type="text" 
+        [(ngModel)]="ticker" 
+        name="ticker" 
+        id="ticker" 
+        required />
+    <label for="numShares">Number of Shares:</label>
+    <input
+        type="number"
+        [(ngModel)]="numShares"
+        name="numShares"
+        id="numShares"
+        required
+    />
+    <label for="pricePaid">Price Paid:</label>
+    <input
+        type="number"
+        [(ngModel)]="pricePaid"
+        name="pricePaid"
+        id="pricePaid"
+        required
+    />
+    <label for="dateBought">Date Bought:</label>
+    <input
+        type="date"
+        [(ngModel)]="dateBought"
+        name="dateBought"
+        id="dateBought"
+        required
+    />
+    <button [disabled]="isLoading">Add Stock</button>
+    <div class="error" *ngIf="error">{{ error }}</div>
+</form>

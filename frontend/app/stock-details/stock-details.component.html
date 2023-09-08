@@ -1,0 +1,21 @@
+<div class="stock-details">
+    <div class="table-row">
+        <table class="stock-table">
+            <tbody>
+                <tr>
+                    <td>{{ stock.companyName }}</td>
+                    <td>{{ stock.ticker }}</td>
+                    <td>{{ tradingPrice }}</td>
+                    <td>{{ stock.numShares }}</td>
+                    <td>{{ marketValue }}</td>
+                    <td>{{ percentChange }}</td>
+                    <td>{{ dollarChange }}</td>
+                    <td>{{ modifiedDateBought }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="toggleUpdateForm()" class="update-stock-button">Update</button>
+    </div>
+    <app-stock-update-form *ngIf="showUpdateForm" [stock]="stock"></app-stock-update-form>
+    <hr />
+</div>

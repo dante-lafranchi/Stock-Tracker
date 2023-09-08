@@ -1,0 +1,22 @@
+<form class="login-form" (ngSubmit)="login($event)">
+    <h3>Login</h3>
+    <label htmlFor="phoneNumber">Phone Number:</label>
+    <input
+        type="tel"
+        [(ngModel)]="phoneNumber"
+        name="phoneNumber"
+        id="phoneNumber"
+        required
+        pattern="^[0-9]{9}$"
+    />
+  <label htmlFor="password">Password:</label>
+  <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      id="password"
+      required
+  />
+  <button [disabled]="isLoading">Login</button>
+  <div class="error" *ngIf="error">{{ error }}</div>
+</form>

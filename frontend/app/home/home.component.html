@@ -1,0 +1,24 @@
+<div *ngIf="dataFetched" class="home">
+    <div class="stocks">
+        <div class="graph-and-form">
+            <app-portfolio-graph [stocks]="stocks"></app-portfolio-graph>
+            <app-stock-form></app-stock-form>
+        </div>
+        <app-portfolio-header></app-portfolio-header>
+        <app-stock-table-header></app-stock-table-header>
+        <div *ngIf="stocks">
+            <div *ngFor="let stock of stocks">
+                <app-stock-details [stock]="stock"></app-stock-details>
+            </div>
+        </div>
+        <div class="alerts">
+            <div>
+                <app-alert-table-header></app-alert-table-header>
+                <div *ngFor="let alert of alerts">
+                    <app-alert-details [alert]="alert"></app-alert-details>
+                </div>
+            </div>
+            <app-alert-form></app-alert-form>
+        </div>
+    </div>
+</div>

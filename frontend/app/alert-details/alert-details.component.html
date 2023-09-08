@@ -1,0 +1,19 @@
+<div class="alert-details">
+    <div class="table-row">
+        <table class="alert-table">
+            <tbody>
+                <tr>
+                    <td>{{ alert.companyName }}</td>
+                    <td>{{ alert.ticker }}</td>
+                    <td>{{ alert.tradingPrice }}</td>
+                    <td>{{ alert.alertPrice }}</td>
+                    <td>{{ modifiedDateCreated }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button [disabled]="isLoading" (click)="deleteAlert()" class="delete-alert-button">Delete</button>
+    </div>
+    <div class="alert-divider">
+        <hr />
+    </div>
+</div>

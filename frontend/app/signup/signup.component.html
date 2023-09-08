@@ -1,0 +1,37 @@
+<div class="signup-forms-container">
+    <form
+        class="signup-form"
+        (ngSubmit)="sendOtp($event)"
+        style="margin-bottom: 30px"
+    >
+        <h3>Sign up</h3>
+        <label htmlFor="phoneNumber">Phone Number:</label>
+        <input
+            type="tel"
+            [(ngModel)]="phoneNumber"
+            name="phoneNumber"
+            id="phoneNumber"
+            required
+        />
+        <label htmlFor="password">Password:</label>
+        <input
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            id="password"
+            required
+        />
+        <button>Send OTP</button>
+    </form>
+    <form class="signup-form" (ngSubmit)="verifyOtp($event)">
+        <label htmlFor="otp">OTP Code:</label>
+        <input 
+            type="text" 
+            [(ngModel)]="otp" 
+            name="otp" 
+            id="otp" 
+            required />
+        <button [disabled]="!otpSent || isLoading">Sign up</button>
+    </form>
+    <div class="error" *ngIf="error">{{ error }}</div>
+</div>

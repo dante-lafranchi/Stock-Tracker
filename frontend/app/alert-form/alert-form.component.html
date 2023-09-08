@@ -1,0 +1,29 @@
+<form action="" class="add-alert-form" (ngSubmit)="createAlert($event)">
+    <h3>Add Alert</h3>
+    <label for="companyName">Company:</label>
+    <input
+        type="text"
+        [(ngModel)]="companyName"
+        name="companyName"
+        id="companyName"
+        required
+    />
+    <label for="ticker">Ticker:</label>
+    <input
+        type="text"
+        [(ngModel)]="ticker"
+        name="ticker"
+        id="ticker"
+        required
+    />
+    <label for="alertPrice">Alert Price:</label>
+    <input
+        type="number"
+        [(ngModel)]="alertPrice"
+        name="alertPrice"
+        id="alertPrice"
+        required
+    />
+    <button [disabled]="isLoading">Add Alert</button>
+    <div class="error" *ngIf="error">{{ error }}</div>
+</form>
